@@ -1,0 +1,6 @@
+[submodule "kimi-cli-for-xbow"]
+	path = kimi-cli-for-xbow
+	url = https://github.com/m-sec-org/kimi-cli-for-xbow
+[submodule "ez-xbow-platform-mcp"]
+	path = ez-xbow-platform-mcp
+	url = https://github.com/m-sec-org/ez-xbow-platform-mcp
