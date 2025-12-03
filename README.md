@@ -8,19 +8,20 @@
 
 1. [ez-xbow-platform-mcp](./ez-xbow-platform-mcp/) - 模型上下文协议 (MCP) 服务器
 
-    - 提供 XBOW 挑战管理、知识库、Kali 容器等能力
-    - 作为 AI Agent 与 XBow 平台之间的桥梁
-    - 支持本地模拟测试和真实平台对接
+   - 提供 XBOW 挑战管理、知识库、Kali 容器等能力
+   - 作为 AI Agent 与 XBow 平台之间的桥梁
+   - 支持本地模拟测试和真实平台对接
 
 2. [kimi-cli-for-xbow](./kimi-cli-for-xbow/) - CTF 专用 AI Agent CLI
 
-    - 基于 Kimi CLI 深度定制的自动解题客户端
-    - 支持多种 AI 模型（DeepSeek、通义千问等）
-    - Daemon 模式实现无人值守自动解题
+   - 基于 Kimi CLI 深度定制的自动解题客户端
+   - 支持多种 AI 模型（DeepSeek、通义千问等）
+   - Daemon 模式实现无人值守自动解题
+
 
 ### 工作原理
 
-```
+````
 ┌─────────────────────┐
 │   Kimi CLI Agent    │  ← 用户交互层
 │  (AI 决策引擎)       │
@@ -35,40 +36,41 @@
            ├→ XBow Platform (真实/模拟)
            ├→ Kali Container (工具执行)
            └→ Knowledge Base (技术文档)
-```
+````
 
 ## 核心特性
 
 ### 🛡️ XBow MCP Server
 
--   **挑战管理** - 列出、尝试和提交 CTF 挑战的解决方案
--   **知识库** - 内建涵盖 9 种漏洞类别的 CTF 技术文档（XSS、SQL、SSTI、SSRF、IDOR、XXE、LFI、CodeI、AFR&PT）
--   **持久化 Kali 容器** - 在隔离环境中执行安全工具（nmap、sqlmap、gobuster 等）
--   **尝试历史** - 通过自动笔记管理，跨会话跟踪和共享发现
--   **多种协议** - 支持 stdio、SSE 和 HTTP/2 流模式
+- **挑战管理** - 列出、尝试和提交 CTF 挑战的解决方案
+- **知识库** - 内建涵盖 9 种漏洞类别的 CTF 技术文档（XSS、SQL、SSTI、SSRF、IDOR、XXE、LFI、CodeI、AFR&PT）
+- **持久化 Kali 容器** - 在隔离环境中执行安全工具（nmap、sqlmap、gobuster 等）
+- **尝试历史** - 通过自动笔记管理，跨会话跟踪和共享发现
+- **多种协议** - 支持 stdio、SSE 和 HTTP/2 流模式
 
 ### 🤖 Kimi CLI Agent
 
--   **自定义模型支持** - 支持 DeepSeek、通义千问等 OpenAI 兼容 API
--   **专用 Agent 模式** - 针对 CTF 竞赛优化的 Agent（ctfer、security、security_beta）
--   **Daemon 自动解题** - 无人值守自动获取题目并解题
--   **命令执行防沉迷** - 防止无限循环和过度命令执行
--   **Session 隔离** - 按工作目录维护独立的对话上下文
--   **Shell 集成** - 支持 Zsh 集成和 Shell 命令执行
+- **自定义模型支持** - 支持 DeepSeek、通义千问等 OpenAI 兼容 API
+- **专用 Agent 模式** - 针对 CTF 竞赛优化的 Agent（ctfer、security、security_beta）
+- **Daemon 自动解题** - 无人值守自动获取题目并解题
+- **命令执行防沉迷** - 防止无限循环和过度命令执行
+- **Session 隔离** - 按工作目录维护独立的对话上下文
+- **Shell 集成** - 支持 Zsh 集成和 Shell 命令执行
 
 ## 快速开始
 
 ### 前提条件
 
--   **XBow MCP Server**:
+- **XBow MCP Server**:
 
-    -   Go 1.24.7+
-    -   Docker (支持 buildx)
+  - Go 1.24.7+
+  - Docker (支持 buildx)
 
--   **Kimi CLI**:
+- **Kimi CLI**:
 
-    -   Python 3.13+
-    -   [uv](https://docs.astral.sh/uv/) 包管理器
+  - Python 3.13+
+  - [uv](https://docs.astral.sh/uv/) 包管理器
+
 
 ### 第一步：安装 Kimi CLI
 
@@ -164,15 +166,15 @@ kimi
 
 **DeepSeek 示例**：
 
--   API Base: `https://api.deepseek.com/v1`
--   Provider: OpenAI Legacy
--   Model: `deepseek-chat`
+- API Base: `https://api.deepseek.com/v1`
+- Provider: OpenAI Legacy
+- Model: `deepseek-chat`
 
 **通义千问示例**：
 
--   API Base: `https://dashscope.aliyuncs.com/compatible-mode/v1`
--   Provider: OpenAI Legacy
--   Model: `qwen-plus`
+- API Base: `https://dashscope.aliyuncs.com/compatible-mode/v1`
+- Provider: OpenAI Legacy
+- Model: `qwen-plus`
 
 ### 第六步：开始自动解题
 
@@ -193,11 +195,11 @@ kimi -a security -m deepseek-chat --daemon --verbose \
 
 **参数说明**：
 
--   `-a security`：使用 CTF 专用 Agent
--   `-m deepseek-chat`：指定 AI 模型
--   `--daemon`：启用自动化模式
--   `--verbose`：显示详细日志
--   `-c "..."`：初始任务指令
+- `-a security`：使用 CTF 专用 Agent
+- `-m deepseek-chat`：指定 AI 模型
+- `--daemon`：启用自动化模式
+- `--verbose`：显示详细日志
+- `-c "..."`：初始任务指令
 
 ## MCP Server 可用工具
 
@@ -315,16 +317,16 @@ CLI 会利用文件工具自动筛选和使用相关的渗透测试技巧。
 
 ### XBow MCP Server
 
--   `.challenge_history/{challenge_code}/` - 尝试元数据、笔记和历史记录
--   `.kail-history/` - 命令执行记录
+- `.challenge_history/{challenge_code}/` - 尝试元数据、笔记和历史记录
+- `.kail-history/` - 命令执行记录
 
 ### Kimi CLI
 
--   `.kimi/` - Session 数据、对话历史和配置
+- `.kimi/` - Session 数据、对话历史和配置
 
 ## 项目结构
 
-```
+````
 xbow-competition/
 ├── ez-xbow-platform-mcp/       # MCP 服务器
 │   ├── cmd/                    # 主程序入口
@@ -338,7 +340,7 @@ xbow-competition/
 │   ├── start.sh                # 快速启动脚本
 │   └── README.md
 └── README.md                   # 本文件
-```
+````
 
 ## 开发
 
@@ -367,40 +369,41 @@ make help     # 显示所有命令
 
 ### MCP 连接失败
 
--   确认 MCP 服务器已启动且监听正确端口
--   检查 `mcp.json` 配置是否正确
--   验证防火墙规则
+- 确认 MCP 服务器已启动且监听正确端口
+- 检查 `mcp.json` 配置是否正确
+- 验证防火墙规则
 
 ### Kali 容器无法启动
 
--   确认 Docker 服务正在运行
--   检查 Dockerfile 路径是否正确
--   验证是否有足够的磁盘空间
+- 确认 Docker 服务正在运行
+- 检查 Dockerfile 路径是否正确
+- 验证是否有足够的磁盘空间
 
 ### AI 模型调用失败
 
--   验证 API Key 是否有效
--   检查 API Base URL 是否正确
--   确认模型名称拼写正确
--   查看 API 配额是否充足
+- 验证 API Key 是否有效
+- 检查 API Base URL 是否正确
+- 确认模型名称拼写正确
+- 查看 API 配额是否充足
 
 ### Daemon 模式无响应
 
--   使用 `--verbose` 查看详细日志
--   检查是否触发了防沉迷保护
--   验证 MCP 服务器是否正常响应
+- 使用 `--verbose` 查看详细日志
+- 检查是否触发了防沉迷保护
+- 验证 MCP 服务器是否正常响应
 
 ## 贡献
 
 欢迎提出 Issue 和 Pull Request！
 
-### XBow MCP Server
-
 <p align="center">
-<a href="https://github.com/m-sec-org/kimi-cli-for-xbow/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=m-sec-org/kimi-cli-for-xbow&max=36" alt="contributors">
+<a href="https://github.com/m-sec-org/ez-xbow-platform-mcp/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=m-sec-org/ez-xbow-platform-mcp&max=36" alt="sponsors-list" >
 </a>
 </p>
+
+
+### XBow MCP Server
 
 项目地址：[m-sec-org/ez-xbow-platform-mcp](https://github.com/m-sec-org/ez-xbow-platform-mcp)
 
@@ -416,15 +419,15 @@ make help     # 显示所有命令
 
 ## 相关资源
 
--   [Model Context Protocol (MCP) 规范](https://modelcontextprotocol.io/)
--   [Kimi API 文档](https://platform.moonshot.cn/docs)
--   [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
--   [OWASP Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
+- [Model Context Protocol (MCP) 规范](https://modelcontextprotocol.io/)
+- [Kimi API 文档](https://platform.moonshot.cn/docs)
+- [PayloadsAllTheThings](https://github.com/swisskyrepo/PayloadsAllTheThings)
+- [OWASP Testing Guide](https://owasp.org/www-project-web-security-testing-guide/)
 
 ## 致谢
 
 感谢 [Moonshot AI](https://www.moonshot.cn/) 提供的 Kimi CLI 基础框架。
 
----
+***
 
 **注意**：本项目仅供授权的安全测试、CTF 竞赛和教育目的使用。请勿用于非法活动。
