@@ -6,13 +6,13 @@
 
 本项目由两个核心组件组成：
 
-1. [ez-xbow-platform-mcp](./ez-xbow-platform-mcp/) - 模型上下文协议 (MCP) 服务器
+1. [ez-xbow-platform-mcp](https://github.com/m-sec-org/ez-xbow-platform-mcp) - 模型上下文协议 (MCP) 服务器
 
    - 提供 XBOW 挑战管理、知识库、Kali 容器等能力
    - 作为 AI Agent 与 XBow 平台之间的桥梁
    - 支持本地模拟测试和真实平台对接
 
-2. [kimi-cli-for-xbow](./kimi-cli-for-xbow/) - CTF 专用 AI Agent CLI
+2. [kimi-cli-for-xbow](https://github.com/m-sec-org/kimi-cli-for-xbow) - CTF 专用 AI Agent CLI
 
    - 基于 Kimi CLI 深度定制的自动解题客户端
    - 支持多种 AI 模型（DeepSeek、通义千问等）
