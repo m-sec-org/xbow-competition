@@ -2,6 +2,18 @@
 
 一个完整的 AI Agent 自动化 XBOW 解题方案，结合 MCP 服务器和智能 CLI 客户端，实现自主渗透测试和 XBOW 挑战。
 
+## 竞赛成绩
+
+|起始日期|结束日期|竞赛|赛段|获奖情况|排名|
+|-|-|-|-|-|-|
+| 2025-11-10 | 2025-11-16 | [腾讯云黑客松智能渗透测试挑战赛（第一期）](https://zc.tencent.com/competition/competitionHackathon?code=cha004) | 线上初赛 | N/A | 7 / 238 |
+| 2025-11-29 | 2025-11-29 | [腾讯云黑客松智能渗透测试挑战赛（第一期）](https://zc.tencent.com/competition/competitionHackathon?code=cha004) | 线下决赛 | 优秀奖 | 7 / 238 |
+
+<a href="https://zc.tencent.com/competition/competitionHackathon?code=cha004">
+    <img width="1604" height="460" alt="dc25eea9efae81999d4660a747aa0b9c" src="https://github.com/user-attachments/assets/2cda17c3-e668-4459-abc0-e46a745860be" />
+</a>
+
+
 ## 项目概述
 
 本项目由两个核心组件组成：
